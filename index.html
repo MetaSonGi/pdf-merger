@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PDF 합치기</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>📄 PDF 합치기</h1>
+    <p class="sub">여러 PDF를 순서대로 하나로 — 전부 브라우저 안에서, 서버 전송 없음</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div id="dropZone" class="drop-zone">
+    <div class="drop-icon">📥</div>
+    <p><b>PDF 파일을 드래그</b>하거나 클릭해서 선택 (여러 개 가능)</p>
+    <input type="file" id="fileInput" accept="application/pdf" multiple hidden />
+  </div>
+</section>
+
+<main class="panel">
+  <div class="merge-bar">
+    <span id="mergeInfo">PDF를 넣어주세요</span>
+    <div class="merge-actions">
+      <input type="text" id="outName" value="merged.pdf" />
+      <button id="mergeBtn" class="btn primary" disabled>📚 합치기 & 다운로드</button>
+    </div>
+  </div>
+  <ol id="fileList" class="file-list"></ol>
+  <p class="hint">↑↓ 버튼으로 순서를 바꾸세요. 위에서부터 순서대로 합쳐집니다.</p>
+</main>
+
+<footer>pdf-lib · 100% 클라이언트 사이드</footer>
+<script src="app.js"></script>
+</body>
+</html>
